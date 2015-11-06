@@ -1,0 +1,11 @@
+<h2> Gifs for '<%= @category.name %>' </h2>
+
+<div class="row">
+  <% @category.gifs.each do |gif| %>
+
+    <div id="<%= gif.uid %>" class='col s4 gifs'>
+      <%= link_to 'Add to favorites', favorites_path(uid: gif.uid), method: :post %><br>
+      <img src="<%= gif.url %>" />
+    </div>
+  <% end %>
+</div>

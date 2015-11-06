@@ -1,0 +1,7 @@
+<h2> Gifs for '<%= @category.name %>' </h2>
+
+<ul>
+  <% @gifs.each do |gif| %>
+  <li id="<%= gif.uid %>"><img src="<%= gif.url %>" /> </li>
+  <% end %>
+</ul>

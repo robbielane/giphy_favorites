@@ -6,9 +6,36 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class='yellow lighten-4'>
+  <div class="row blue">
+    <div class="container">
 
-<%= yield %>
+      <div class="col s6">
+        <%= image_tag "giphyfavlogo.png", class: 'pad' %>
+      </div>
+      <div class="col s6 center">
+        <ul class="pushdown">
+          <li><%= link_to 'Favorites', favorites_path, class: 'yellow-text menunav' %></li>
+          <li><%= link_to 'Categories', categories_path, class: 'yellow-text menunav' %></li>
+        <% if current_user %>
+          <li> <%= link_to 'Logout', logout_path, method: :delete, class: 'yellow-text menunav' %></li>
+        <% else %>
+          <li> <%= link_to 'Login', login_path, class: 'yellow-text menunav' %></li>
+        <% end %>
+        <% if current_admin? %>
+          <li> <%= link_to 'Add New Gif', new_admin_gif_path, class: 'yellow-text menunav' %></li>
+        <% end %>
+        <ul>
+      </div>
+    </div>
+
+  </div>
+
+<div class="container">
+
+  <%= yield %>
+
+</div>
 
 </body>
 </html>

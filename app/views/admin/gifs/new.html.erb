@@ -1,0 +1,10 @@
+
+<div class="row">
+  <div class="col s6 offset-s3 pushdown">
+    <%= form_for :search_term, url: admin_gifs_path do |f| %>
+      <%= f.label :category, 'Gif Search Term' %>
+      <%= f.text_field :category %>
+      <%= f.submit 'Create Gif', class: 'btn red' %>
+    <% end %>
+  </div>
+</div>

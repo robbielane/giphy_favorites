@@ -1,0 +1,7 @@
+<h3> Categories </h3>
+
+<ul>
+  <% @categories.each do |cat| %>
+  <li><%= link_to cat.name, admin_category_path(cat) %></li>
+  <% end %>
+</ul>

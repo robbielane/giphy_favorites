@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+@import "materialize";
+
+.menunav {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.pushdown {
+  margin-top: 75px;
+}
+
+.pad {
+  padding: 25px 0;
+}
+
+.gifs {
+  text-align: center;
+  min-height: 375px;
+}
+
+.gifs img {
+  max-height: 256px;
+  max-width: 400px;
+}
