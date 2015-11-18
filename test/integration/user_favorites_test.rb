@@ -16,13 +16,6 @@ class UserFavoritesTest < ActionDispatch::IntegrationTest
     click_button 'Login'
   end
 
-  test "user sees category list and can vist category page" do
-    visit categories_path
-    click_link 'dog'
-    assert page.has_css? '#cSUUIDSz9kdKo'
-    assert page.has_css? '#rdTbCMvEymAlG'
-  end
-
   test 'user can favorite a gif' do
     login_user
     visit category_path(@category)

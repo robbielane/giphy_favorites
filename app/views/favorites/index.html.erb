@@ -3,8 +3,9 @@
 </p>
 <div class="row">
   <% @favorites.each do |f| %>
-  <div class="col s4 gifs">
-    <img src="<%= f.url %>" />
+  <div class='col s4 gifs'>
+    <img src="<%= f.url %>" /><br>
+    <%= link_to "Delete from favorites", favorite_path(f), method: :delete %>
   </div>
   <% end %>
 </ul>

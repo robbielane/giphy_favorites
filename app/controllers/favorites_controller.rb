@@ -12,6 +12,13 @@ class FavoritesController < ApplicationController
     redirect_to favorites_path
   end
 
+  def destroy
+    @favorite = Favorite.find_by(user_id: session[:user_id], gif_id: params[:id])
+    @favorite.destroy
+    flash.now[:notice] = "Successfully removed favorite"
+    render :index
+  end
+
   private
 
   def set_user
